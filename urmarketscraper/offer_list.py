@@ -9,8 +9,6 @@ BASE_MARKET_URL = "https://www.urban-rivals.com/market/?"
 
 
 def _html_to_soup(response):
-    print("Type of response: ",type(response))
-    print(response)
     return BeautifulSoup(response.text, "html.parser")
 
 
@@ -23,8 +21,6 @@ def _get_offer_list(id, base_market_url=BASE_MARKET_URL):
 
 
 def _find_offers(market):
-    print("Type of market: ", type(market))
-    print(market)
     return {_get_offer_id(page): Offer(_get_offer_id(page), _create_offer_dict(page))
             for page in market}
 

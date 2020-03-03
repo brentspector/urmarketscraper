@@ -1,15 +1,5 @@
 import urmarketscraper.market as market
-import pickle
-from pytest import fixture
 from requests import Session
-
-
-@fixture(scope="module")
-def mocked_session(request, tmp_path_factory):
-    file_location = tmp_path_factory.getbasetemp() / "resources/market_session.txt"
-    print("Making mockery")
-    with open(file_location, "rb") as f:
-            return pickle.load(f)
 
 
 # Happy Path - Basic usage with int

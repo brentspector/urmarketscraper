@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "urmarketscraper"
-version = "0.1.4"
+version = "0.1.5"
 description = "Collects market offers for Urban Rivals."
 authors = ["Brent Spector <brent.spector@yahoo.com>"]
 license = "MIT"
@@ -9,6 +9,8 @@ repository = "https://github.com/brentspector/urmarketscraper"
 
 [tool.poetry.dependencies]
 python = "^3.8"
+bs4 = "^0.0.1"
+requests = "^2.23.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.3.5"
