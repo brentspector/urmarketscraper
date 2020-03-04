@@ -29,7 +29,7 @@ def test_init_string_id():
 def test_init_level_price_dict_sorted():
     keys = list(FULL_OFFER.level_price_dict.keys())
     print(keys)
-    assert FULL_OFFER.is_level_price_dict_sorted(), "Level Price Dict should be sorted on init"
+    assert FULL_OFFER._is_level_price_dict_sorted(), "Level Price Dict should be sorted on init"
 
 
 # Happy Path - Level Price Dict Missing
@@ -51,7 +51,7 @@ def test_sort_level_price_dict():
     assert myoffer.level_price_dict is None
     myoffer.level_price_dict = TEST_DICT
     keys = list(myoffer.level_price_dict.keys())
-    assert myoffer.is_level_price_dict_sorted()
+    assert myoffer._is_level_price_dict_sorted()
     assert myoffer.level_price_dict[keys[0]] == "101", "Level Price Dict values should not be assigned to wrong key"
 
 

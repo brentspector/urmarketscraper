@@ -3,14 +3,33 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to urmarketscraper's documentation!
+
+
+Full Documentation
+==================
+A basic example can be found at :ref:`basic-usage`
+
+Market Module
+-------------
+.. automodule:: urmarketscraper.market
+   :members:
+
+Offer Object
+------------
+.. autoclass:: urmarketscraper.offer.Offer
+   :members:
+   :noindex:
+
+urmarketscraper Documentation TOC
 ===========================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 0
    :caption: Contents:
 
-
+   offer/offer
+   market/basic-usage
+   market/advanced-usage
 
 Indices and tables
 ==================

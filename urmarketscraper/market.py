@@ -6,6 +6,23 @@ BASE_MARKET_URL = "https://www.urban-rivals.com/market/?"
 
 
 def get_market_offers(session, ids, base_market_url=BASE_MARKET_URL):
+    """\nMain function for interaction with this library.
+    \nProvided a sequence of Character Ids, returns a dictionary of offers for each. \
+    Requires a session which has already authenticated with Urban Rivals.
+    \nOptional: provide a base market URL for proxy. Must end with a "?" \
+    Ex: "http://example.com?"
+
+
+    >>>get_market_offers(session, [1400, 1423, 1764])
+
+    {1400: Offer, 1423: Offer, 1764: Offer}
+
+
+    >>>get_market_offers(session, ["1301", "1543"])
+
+    {"1301": Offer, "1543": Offer}
+
+    """
     if len(ids) < 1:
         raise ValueError("Ids cannot be empty")
     if not base_market_url.endswith("?"):
