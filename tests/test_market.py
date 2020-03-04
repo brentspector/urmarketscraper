@@ -4,7 +4,7 @@ from unittest import mock
 from pytest import raises
 
 
-# Happy Path - Basic usage
+# Happy Path - Basic Usage Int
 def test_list_of_ints(monkeypatch, mocked_session):
     monkeypatch.setattr(Session, "get", lambda a, b: mocked_session)
     offer = market.get_market_offers(Session(), [14, 15])
@@ -15,6 +15,19 @@ def test_list_of_ints(monkeypatch, mocked_session):
     # Since session is immutable from file, id given and found are different
     assert offer[14].id == 1462
     assert offer[15].id == 1462
+
+
+# Happy Path - Basic Usage String
+def test_list_of_strings(monkeypatch, mocked_session):
+    monkeypatch.setattr(Session, "get", lambda a, b: mocked_session)
+    offer = market.get_market_offers(Session(), ["14", "15"])
+    for k in offer:
+        print(k)
+        for k,v in offer[k].__dict__.items():
+            print("Key is ", k, " and value is ", v)
+    # Since session is immutable from file, id given and found are different
+    assert offer["14"].id == 1462
+    assert offer["15"].id == 1462
 
 
 # Happy Path - Generator

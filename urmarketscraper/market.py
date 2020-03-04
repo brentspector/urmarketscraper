@@ -5,6 +5,13 @@ from .offer_list import _html_to_soup, _get_offer_list, _find_offers
 BASE_MARKET_URL = "https://www.urban-rivals.com/market/?"
 
 
+def _clean_input(id):
+    """Cleans the char id"""
+    if type(id) is int:
+        id = abs(id)
+    return id
+
+
 def get_market_offers(session, ids, base_market_url=BASE_MARKET_URL):
     """\nMain function for interaction with this library.
     \nProvided a sequence of Character Ids, returns a dictionary of offers for each. \
@@ -33,7 +40,7 @@ def get_market_offers(session, ids, base_market_url=BASE_MARKET_URL):
             session.get(
                 _get_offer_list(char_id, base_market_url)
         ))
-        for char_id in map(abs, ids)
+        for char_id in map(_clean_input, ids)
     }
     return {char_id :_find_offers(market[char_id])
-            for char_id in map(abs, ids) }
+            for char_id in map(_clean_input, ids) }
