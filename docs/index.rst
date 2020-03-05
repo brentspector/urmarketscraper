@@ -9,6 +9,14 @@ Full Documentation
 ==================
 A basic example can be found at :ref:`basic-usage`
 
+Example
+-------
+>>> from urmarketscraper import market
+>>> market.get_market_offers(session, ["1462", "1463"])
+Returns:
+    {"1462": {"_Offer__id": 1462, "_Offer__level_price_dict": {"1": "799", "4": "799"}}, "1463": {"_Offer__id": 1463,
+ "_Offer__level_price_dict": {"2": "27887"}}}
+
 Market Module
 -------------
 .. automodule:: urmarketscraper.market

@@ -1,8 +1,8 @@
-#Urban Rivals Market Scraper
+# Urban Rivals Market Scraper
 
-##Collects market offers for Urban Rivals.
+## Collects market offers for Urban Rivals.
 
-####Install from https://pypi.org/project/urmarketscraper/
+#### Install from https://pypi.org/project/urmarketscraper/
 
 This is a screen scraper utility for [Urban Rivals](https://www.urban-rivals.com).
 
@@ -15,3 +15,14 @@ is. Default is `https://www.urban-rivals.com/market/?`. Any url given here must 
 with a `?` so that the URL encoding can complete correctly.
 
 [Basic Usage Example](docs/market/basic-usage.rst)
+
+[Full Documentation](https://urmarketscraper.readthedocs.io/en/latest/)
+
+### Example
+```python
+>>> from urmarketscraper import market
+>>> market.get_market_offers(session, ["1462", "1463"])
+Returns:
+    {"1462": {"_Offer__id": 1462, "_Offer__level_price_dict": {"1": "799", "4": "799"}}, "1463": {"_Offer__id": 1463, 
+ "_Offer__level_price_dict": {"2": "27887"}}}
+```
