@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "urmarketscraper"
-version = "1.0.1"
+version = "1.1.0"
 description = "Collects market offers for Urban Rivals."
 authors = ["Brent Spector <brent.spector@yahoo.com>"]
 license = "MIT"
