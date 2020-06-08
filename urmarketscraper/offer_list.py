@@ -11,12 +11,13 @@ def _html_to_soup(response):
 
 def _get_offer_list(id, base_market_url):
     """Generates URL for a particular Character Id"""
-    int_id = int(id)
+    if not id:
+        raise ValueError("Id cannot be None")
     return base_market_url + urlencode({'action': 'buy', 'page': 0,
                                         'id_familly': 0, 'sortby': 'price',
                                         'orderby': 'asc', 'rarity': 'all',
                                         'group': 'all', 'id_artist': 0,
-                                        'id_format': 0, 'search': int_id})
+                                        'id_format': 0, 'search': id})
 
 
 def _find_offers(page):
