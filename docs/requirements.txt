@@ -31,6 +31,6 @@ sphinxcontrib-htmlhelp==1.0.3
 sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.3
 sphinxcontrib-serializinghtml==1.1.4
-urllib3==1.25.8
+urllib3==1.26.5
 -e git+https://github.com/brentspector/urmarketscraper.git@f9f7e1ca6707ba5332304517f2692bcdfd13b5a7#egg=urmarketscraper
 wcwidth==0.1.8
